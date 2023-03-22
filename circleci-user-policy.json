@@ -18,7 +18,7 @@
 				"lambda:UpdateFunctionCode"            
 			],            
 			"Resource": [                
-				"<YOUR_LAMBDA_ARN_HERE>"            
+				"arn:aws:lambda:us-east-2:178633574192:function:tdd_lab"            
 			]        
 		}
 	]
