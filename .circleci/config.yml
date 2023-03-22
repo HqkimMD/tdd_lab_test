@@ -44,7 +44,7 @@ jobs:
       - attach_workspace:
           at: ./
       - aws-cli/setup:
-          aws-region: us-east-2
+          aws-region: "US East (Ohio) us-east-2"
           aws-access-key-id: AKIASTF3EA4YIF6YAUNH
           aws-secret-access-key: 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
       - run:
