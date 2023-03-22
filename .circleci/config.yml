@@ -45,8 +45,8 @@ jobs:
           at: ./
       - aws-cli/setup:
           aws-region: AWS_DEFAULT_REGION
-          aws-access-key-id: AWS_ACCESS_KEY_ID
-          aws-secret-access-key: AWS_SECRET_ACCESS_KEY
+          aws-access-key-id: AKIASTF3EA4YIF6YAUNH
+          aws-secret-access-key: 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
       - run:
           name: Upload to S3
           command: aws s3 cp function.zip s3://hqkim/function.zip
@@ -58,13 +58,13 @@ workflows:
   build-test-and-deploy:
     jobs:
       - build-and-test:
-          context: aws_lab010
+          context: tdd_lab_test
           filters:
             branches:
               only:
                 - main
       - deploy-dev:
-          context: aws_lab010
+          context: tdd_lab_test
           requires:
             - build-and-test
           filters:
