@@ -3,8 +3,8 @@ from mangum import Mangum
 
 app = FastAPI()
 
-class NameRequest(BaseModel):
-    name: str
+# class NameRequest(BaseModel):
+#     name: str
     
 @app.get("/")
 def read_root():
@@ -18,9 +18,13 @@ def read_root():
 def read_name(name: str = None):
     return {"hello": name}
 
-@app.post("/callname", response_model=dict)
-def call_name(request: NameRequest):
-    return {"hello": request.name}
+@app.post("/callname")
+def greet_name(name: str):
+    return {"hello": name}
+
+# @app.post("/callname", response_model=dict)
+# def call_name(request: NameRequest):
+#     return {"hello": request.name}
 
 # @app.get("/items/{item_id}")
 # def read_item(item_id: int, q: str = None):
