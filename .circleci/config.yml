@@ -49,7 +49,7 @@ jobs:
           aws-secret-access-key: AWS_SECRET_ACCESS_KEY
       - run:
           name: Upload to S3
-          command: aws s3 cp function.zip s3://hqkim/function.zip
+          command: aws s3 cp function.zip s3://hqkim1/function.zip
       - run:
           name: Deploy new Lambda
           command: aws lambda update-function-code --function-name fastapihqkim --s3-bucket hqkim1 --s3-key function.zip
