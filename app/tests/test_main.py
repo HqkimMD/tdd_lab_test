@@ -21,7 +21,7 @@ def test_callname():
     assert response.status_code == 200
     assert response.json() == {"hello": name}
 
-def test_callname():
+def test_greet_name():
     name = "Hakim"
     response = client.post("/callname", json={"name": name})
     assert response.status_code == 200
