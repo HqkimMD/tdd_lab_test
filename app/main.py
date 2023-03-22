@@ -1,5 +1,5 @@
-from fastapi import FastAPI
-from mangum import Mangum
+from fastapi import FastAPI, Form
+from mangum import Mangum 
 
 app = FastAPI()
 
@@ -15,7 +15,7 @@ def read_name(name: str = None):
     return {"hello": name}
 
 @app.post("/callname")
-def greet_name(name: str):
+def read_name(name: str = Form(...)):
     return {"hello": name}
 
 handler = Mangum(app)
